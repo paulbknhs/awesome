@@ -27,16 +27,17 @@ apps = {
   network_manager = "nm-connection-editor", -- recommended: nm-connection-editor
   power_manager = "xfce4-power-manager",    -- recommended: xfce4-power-manager
   terminal = "kitty",
-  launcher = "/home/paul/.config/rofi/scripts/launcher_t2",
+  launcher = "rofi-launcher",
+  rlauncher = "sudo rofi-launcher",
   lock = "i3lock",
   screenshot = "scrot -e 'mv $f ~/Pictures/ 2>/dev/null'",
-  filebrowser = "thunar",
+  filebrowser = "nemo",
 }
 
 -- define wireless and ethernet interface names for the network widget
 -- use `ip link` command to determine these
 network_interfaces = {
-  wlan = "wlan0",
+  wlan = "wlp2s0",
   lan = "enp1s0",
 }
 

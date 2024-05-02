@@ -146,6 +146,11 @@ keys.globalkeys = gears.table.join(
 		awful.spawn(apps.terminal)
 	end, { description = "open a terminal", group = "launcher" }),
 	----------------------------------------------------------------------
+	-- launch rofi as root
+	awful.key({ modkey, "Shift" }, "d", function()
+		awful.spawn(apps.launcher)
+	end, { description = "application launcher", group = "launcher" }),
+	----------------------------------------------------------------------
 	-- launch rofi
 	awful.key({ modkey }, "d", function()
 		awful.spawn(apps.launcher)
