@@ -38,9 +38,8 @@ end)
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-local HOME = os.getenv("HOME")
 local terminal = "kitty"
-local rofi = HOME .. "/.config/rofi/scripts/launcher_t3"
+local rofi = "/home/paul/.config/rofi/scripts/launcher_t3"
 local editor = os.getenv("EDITOR") or "nvim"
 local editor_cmd = terminal .. " -e " .. editor
 
@@ -243,6 +242,14 @@ awful.mouse.append_global_mousebindings({
 
 -- General Awesome keys
 awful.keyboard.append_global_keybindings({
+	awful.key({
+		{ modkey },
+		"d",
+		function()
+			awful.spawn(rofi)
+		end,
+		{ description = "rofi launcher", group = "launcher" },
+	}),
 	awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
 	awful.key({ modkey }, "w", function()
 		mymainmenu:show()
